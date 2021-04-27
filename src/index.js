@@ -1,17 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
-import './index.css';
-import reportWebVitals from './reportWebVitals';
+import Square from './App';
+import './App.css';
 
-ReactDOM.render(
-    <React.StrictMode>
-        <App />
-    </React.StrictMode>,
-    document.getElementById('root')
-);
+class Board extends React.Component {
+    tick() {
+        console.log('alu kha');
+    }
 
+    render() {
+        return (
+            <div className="board">
+                <Square value="0" />
+            </div>
+        );
+    }
+}
+
+ReactDOM.render(<Board />, document.querySelector('#root'));
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
